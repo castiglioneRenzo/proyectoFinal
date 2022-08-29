@@ -21,8 +21,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">{% block tituloNavBar %} {% endblock %}</a>
-                {% block navigationButtons %} {% endblock %}
+                <a class="navbar-brand" href="#!">AppMascotas</a>
+                <a class="btn btn-primary" href="{% url 'inicio' %}">Inicio</a>
+                <a class="btn btn-primary" href="{% url 'Mascota' %}">Mascotas</a>
+                <a class="btn btn-primary" href="{% url 'inicio' %}">Informes</a>
+                <a class="btn btn-primary" href="{% url 'inicio' %}">Veterinarios</a>
+                <a class="btn btn-primary" href="{% url 'inicio' %}">Clientes</a>
+                <a class="btn btn-danger" href="http://localhost:8000/admin/">Administrador</a>
             </div>
         </nav>
         <!-- Masthead-->

@@ -1,8 +1,13 @@
-{% extends 'landingPage.html' %}
+{% extends 'main.html' %}
 {% load static %}
+
+{% block tituloAbstract %} <title> {{ titulo }}</title> {% endblock %}
+
+{% block pageHeading %} <h1>Mascotas</h1> {% endblock %}
+
 {% block formularios %}
 <div>
-    <h2 style="color: rgba(169, 236, 12, 0.801)">Nueva Mascota</h2>
+    <h2 style="color: rgba(169, 236, 12, 0.801); background-color: black;">{{ titulo2 }}</h2>
     {% if miFormulario.errors %}
     <p style="color: red;">Están mal los datos</p>
     {% endif %}

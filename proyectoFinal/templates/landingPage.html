@@ -1,18 +1,7 @@
 {% extends 'main.html' %}
 
 {% load static %}
-{% block tituloNavBar %}AppMascotas{% endblock %}
 {% block tituloAbstract %}
 <title>AppMascotas</title>
 {% endblock %}
-
-{% block navigationButtons %}
-<a class="btn btn-primary" href="{% url 'inicio' %}">Inicio</a>
-<a class="btn btn-primary" href="{% url 'Mascota' %}">Mascotas</a>
-<a class="btn btn-primary" href="{% url 'inicio' %}">Informes</a>
-<a class="btn btn-primary" href="{% url 'inicio' %}">Veterinarios</a>
-<a class="btn btn-primary" href="{% url 'inicio' %}">Clientes</a>
-<a class="btn btn-danger" href="http://localhost:8000/admin/">Administrador</a>
-{% endblock %}
-{% block formularios %} {% endblock %}
 {% block pageHeading %} <h2>Bienvenido a AppMascotas</h2>{% endblock %}
