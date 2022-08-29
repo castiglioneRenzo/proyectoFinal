@@ -6,8 +6,8 @@ class Mascota(models.Model):
     raza = models.CharField(max_length=40)
     descripcion = models.TextField()
     fecha_nacimiento = models.DateField()
-def __str__(self):
-    return self.nombre + " " + self.apellido
+    def __str__(self):
+        return (self.nombre + " " + self.apellido)
 
 class Informe(models.Model):
     fecha = models.DateField()
