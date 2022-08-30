@@ -9,8 +9,20 @@ class MascotasFormulario(forms.Form):
     fechaNacimiento = forms.DateField(label='Fecha de Nacimiento')
 
 class InformeFormulario(forms.Form):
-    pass
+    fecha = forms.DateField()
+    id_mascota = forms.IntegerField(label="ID de Mascota")
+    reporte = forms.CharField()
+
 class VeterinarioFormulario(forms.Form):
-    pass
+    id = forms.IntegerField()
+    nombre = forms.CharField(max_length=40)
+    apellido = forms.CharField(max_length=40)
+    dni = forms.IntegerField()
+    telefono = forms.IntegerField()
+
 class ClienteFormulario(forms.Form):
-    pass
+    id = forms.IntegerField()
+    nombre=forms.CharField(max_length=40)
+    apellido=forms.CharField(max_length=40)
+    dni=forms.IntegerField()
+    telefono=forms.IntegerField()

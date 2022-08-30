@@ -3,4 +3,7 @@ from appMascotas.views import *
 urlpatterns = [
     path('', inicio, name='inicio'),
     path('mascota', mascotaFormulario, name='Mascota'),
+    path('cliente', clienteFormulario, name='Cliente'),
+    path('veterinario', veterinarioFormulario, name='Veterinario'),
+    path('informe', informeFormulario, name='Informe'),
 ]

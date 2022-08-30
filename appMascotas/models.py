@@ -14,7 +14,7 @@ class Informe(models.Model):
     id_mascota = models.IntegerField(null=False)
     reporte = models.TextField()
     def __str__(self):
-        return str(self.fecha) + " " + self.id_mascota
+        return "ID_mascota: " + str(self.id_mascota) + " | " + str(self.fecha)
 
 class Veterinario(models.Model):
     id = models.IntegerField(primary_key=True)
