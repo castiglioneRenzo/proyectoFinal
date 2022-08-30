@@ -6,15 +6,15 @@ class Mascota(models.Model):
     raza = models.CharField(max_length=40)
     descripcion = models.TextField()
     fecha_nacimiento = models.DateField()
-def __str__(self):
-    return self.nombre + " " + self.apellido
+    def __str__(self):
+        return (self.nombre + " " + self.apellido)
 
 class Informe(models.Model):
     fecha = models.DateField()
     id_mascota = models.IntegerField(null=False)
     reporte = models.TextField()
     def __str__(self):
-        return str(self.fecha) + " " + self.id_mascota
+        return "ID_mascota: " + str(self.id_mascota) + " | " + str(self.fecha)
 
 class Veterinario(models.Model):
     id = models.IntegerField(primary_key=True)
