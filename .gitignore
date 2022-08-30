@@ -1,3 +1,4 @@
 #ignorar carpeta pycache
 appMascotas/__pycache__
-appMascotas/migrations/__pycache__
+appMascotas/migrations
+proyectoFinal/__pycache__
