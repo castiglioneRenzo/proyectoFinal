@@ -10,9 +10,8 @@ def mascotaFormulario(request):
     titulo="AppMascotas - Nueva Mascota"
     titulo2="Nueva Mascota"
     if request.method == 'POST':
-        miFormulario = MascotasFormulario(request.POST)
-        print(miFormulario)
-        if miFormulario.is_valid:
+        miFormulario = MascotasFormulario(request.POST)        
+        if (miFormulario.is_valid()):
             info = miFormulario.cleaned_data
             mascota = Mascota(id=info['id'],nombre=info['nombre'],apellido=info['apellido'],raza=info['raza'],descripcion=info['descripcion'],fecha_nacimiento=info['fechaNacimiento'])
             mascota.save()
@@ -27,8 +26,7 @@ def informeFormulario(request):
     titulo2="Nuevo Informe"
     if request.method == 'POST':
         miFormulario = InformeFormulario(request.POST)
-        print(miFormulario)
-        if miFormulario.is_valid:
+        if (miFormulario.is_valid()):
             info = miFormulario.cleaned_data
             informe = Informe(id_mascota=info['id_mascota'],fecha=info['fecha'],reporte=info['reporte'])
             informe.save()
@@ -43,8 +41,7 @@ def veterinarioFormulario(request):
     titulo2="Nuevo Veterinario"
     if request.method == 'POST':
         miFormulario = VeterinarioFormulario(request.POST)
-        print(miFormulario)
-        if miFormulario.is_valid:
+        if (miFormulario.is_valid()):
             info = miFormulario.cleaned_data
             vet = Veterinario(id=info['id'],nombre=info['nombre'],apellido=info['apellido'],dni=info['dni'],telefono=info['telefono'])
             vet.save()
@@ -59,8 +56,7 @@ def clienteFormulario(request):
     titulo2="Nuevo Cliente"
     if request.method == 'POST':
         miFormulario = ClienteFormulario(request.POST)
-        print(miFormulario)
-        if miFormulario.is_valid:
+        if (miFormulario.is_valid()):
             info = miFormulario.cleaned_data
             cliente = Cliente(id=info['id'],nombre=info['nombre'],apellido=info['apellido'],dni=info['dni'],telefono=info['telefono'])
             cliente.save()
