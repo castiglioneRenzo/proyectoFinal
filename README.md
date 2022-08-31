@@ -12,5 +12,5 @@ Se pretende modelar un sistema que podría ser usado en una veterinaria para lle
 ### Formularios
 - Todos los formularios para ingresar datos respectivos a los modelos se encuentran implementados
 #### Formularios de búsqueda
-	- Buscar informes por fecha (**implementado**)
+- Buscar informes por fecha | **implementado**
 
