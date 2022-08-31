@@ -68,3 +68,21 @@ def clienteFormulario(request):
     else:
         miFormulario = ClienteFormulario()
     return render(request, 'forms.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
+
+#Buscar informes por fecha
+def buscarInformes(request):
+    if  request.GET["Fecha"]:
+
+        #respuesta = f"Estoy buscando la camada nro: {request.GET['camada'] }" 
+        fecha = request.GET['Fecha'] 
+        informes = Informe.objects.filter(fecha__icontains=fecha)
+        if len(informes) != 0:
+            return render(request, "buscarInformes.html", {"informes":informes, "fecha":fecha})
+        else:
+            return render(request, 'buscarInformes.html', {"error":"No hay informes para esa fecha"})
+
+    else: 
+        return render(request, 'buscarInformes.html', {"error":"No se ingresaron datos"})
+        # return HttpResponse("Ingresar Datos")
+def buscar(request):
+    return render(request, 'buscarInformes.html')

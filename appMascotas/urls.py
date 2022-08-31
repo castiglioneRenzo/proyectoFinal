@@ -6,4 +6,6 @@ urlpatterns = [
     path('cliente', clienteFormulario, name='Cliente'),
     path('veterinario', veterinarioFormulario, name='Veterinario'),
     path('informe', informeFormulario, name='Informe'),
+    path('buscarInformes/', buscarInformes, name='buscarInformes'),
+    path('buscar',buscar, name='qInformes'),
 ]
