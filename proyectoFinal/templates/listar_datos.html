@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block tituloAbstract %} <title> {{ titulo }}</title> {% endblock %}
+
+{% block pageHeading %} <h1>Mascotas</h1> {% endblock %}
+
+{% block formularios %}
+<div>
+    <h2 style="color: rgba(169, 236, 12, 0.801); background-color: black;">{{ titulo2 }}</h2>       
+    <table>
+        {% for d in datos %}
+            {{ d }}
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

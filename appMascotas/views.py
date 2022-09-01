@@ -15,10 +15,11 @@ def mascotaFormulario(request):
             info = miFormulario.cleaned_data
             mascota = Mascota(id=info['id'],nombre=info['nombre'],apellido=info['apellido'],raza=info['raza'],descripcion=info['descripcion'],fecha_nacimiento=info['fechaNacimiento'])
             mascota.save()
-            return render(request, 'landingPage.html')
+            mascotas=Mascota.objects.all()
+            return render(request, 'listar_mascotas.html', {"mascotas":mascotas})
     else:
         miFormulario = MascotasFormulario()
-    return render(request, 'forms.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
+    return render(request, 'mascotas_form.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
 
 #formulario de Informes
 def informeFormulario(request):
@@ -33,7 +34,7 @@ def informeFormulario(request):
             return render(request, 'landingPage.html')
     else:
         miFormulario = InformeFormulario()
-    return render(request, 'forms.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
+    return render(request, 'informes_form.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
 
 #formulario de Veterinario
 def veterinarioFormulario(request):
@@ -48,7 +49,7 @@ def veterinarioFormulario(request):
             return render(request, 'landingPage.html')
     else:
         miFormulario = VeterinarioFormulario()
-    return render(request, 'forms.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
+    return render(request, 'veterinarios_form.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
 
 #formulario de Cliente
 def clienteFormulario(request):
@@ -63,7 +64,7 @@ def clienteFormulario(request):
             return render(request, 'landingPage.html')
     else:
         miFormulario = ClienteFormulario()
-    return render(request, 'forms.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
+    return render(request, 'clientes_form.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
 
 #Buscar informes por fecha
 def buscarInformes(request):
@@ -82,3 +83,22 @@ def buscarInformes(request):
         # return HttpResponse("Ingresar Datos")
 def buscar(request):
     return render(request, 'buscarInformes.html')
+
+
+def listarMascotas(request):
+    d=Mascota.objects.all()
+    return render(request, 'listar_datos.html', {"datos":d})
+
+def listarInformes(request):
+    d=Informe.objects.all()
+    return render(request, 'listar_datos.html', {"datos":d})
+
+
+def listarVeterinarios(request):
+    d=Veterinario.objects.all()
+    return render(request, 'listar_datos.html', {"datos":d})
+
+
+def listarClientes(request):
+    d=Cliente.objects.all()
+    return render(request, 'listar_datos.html', {"datos":d})
