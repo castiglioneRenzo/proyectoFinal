@@ -16,7 +16,7 @@ def mascotaFormulario(request):
             mascota = Mascota(id=info['id'],nombre=info['nombre'],apellido=info['apellido'],raza=info['raza'],descripcion=info['descripcion'],fecha_nacimiento=info['fechaNacimiento'])
             mascota.save()
             mascotas=Mascota.objects.all()
-            return render(request, 'listar_mascotas.html', {"mascotas":mascotas})
+            return render(request, 'listar_datos.html', {"datos":mascotas})
     else:
         miFormulario = MascotasFormulario()
     return render(request, 'mascotas_form.html', {"miFormulario":miFormulario, "titulo":titulo, "titulo2":titulo2})
@@ -87,18 +87,18 @@ def buscar(request):
 
 def listarMascotas(request):
     d=Mascota.objects.all()
-    return render(request, 'listar_datos.html', {"datos":d})
+    return render(request, 'listar_datos.html', {"datos":d, "titulo":"Mascotas"})
 
 def listarInformes(request):
     d=Informe.objects.all()
-    return render(request, 'listar_datos.html', {"datos":d})
+    return render(request, 'listar_datos.html', {"datos":d,"titulo":"Informes"})
 
 
 def listarVeterinarios(request):
     d=Veterinario.objects.all()
-    return render(request, 'listar_datos.html', {"datos":d})
+    return render(request, 'listar_datos.html', {"datos":d,"titulo":"Veterinarios"})
 
 
 def listarClientes(request):
     d=Cliente.objects.all()
-    return render(request, 'listar_datos.html', {"datos":d})
+    return render(request, 'listar_datos.html', {"datos":d,"titulo":"Clientes"})
