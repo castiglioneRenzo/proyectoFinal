@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block tituloAbstract %} <title> {{ titulo }}</title> {% endblock %}
+
+{% block pageHeading %} <h1>Mascotas</h1> {% endblock %}
+
+{% block formularios %}
+<div>
+    <h2 style="color: rgba(169, 236, 12, 0.801); background-color: black;">{{ titulo2 }}</h2>
+    {% if miFormulario.errors %}
+    <p style="color: red;">Están mal los datos</p>
+    {% endif %}
+
+    <form action="" method="POST">{% csrf_token %}
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type="submit", value="Guardar">
+
+    </form>
+</div>
+<div>
+    <hr size="2">
+    <a class="btn btn-success" href="{% url 'listarInformes' %}">Listar Informes</a>
+    <hr size="2">
+</div>
+{% endblock %}
